@@ -1,0 +1,25 @@
+
+.error{
+    position: absolute;
+    width: 100%;
+    padding-top: 5%;
+    height: 90%;
+}
+.error img{
+    width: 79%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    margin-top: 1%;
+}
+
+.mat-card-title{
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+.mat-card-header{
+    margin-left: 5%;
+}
