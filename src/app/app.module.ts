@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +12,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CardArticleComponent } from './articles/card-article/card-article.component'
+import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatIconModule} from '@angular/material/icon';
+import { MatProgressSpinner, MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress-spinner';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +25,18 @@ import { CardArticleComponent } from './articles/card-article/card-article.compo
     CardArticleComponent
   ],
   imports: [
+    MatListModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatPaginatorModule,
     MatGridListModule,
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,31 @@
-<mat-grid-list row='1'>
-    <mat-grid-tile>
 
-    </mat-grid-tile>
-    <mat-grid-tile>
-        
-    </mat-grid-tile>
-</mat-grid-list>
+<br>
+<div class="col-md-12">
+    <h4><mat-icon>star</mat-icon>  Mejores Artículos</h4>
+</div>
+<br>
+
+<div class="row justify-content-md-center">
+  <div class="col-md-10">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 spinner-container" *ngIf="!isReady && !flagError">
+                <mat-spinner mode="indeterminate"></mat-spinner>
+                <br>
+            </div>
+            <div class="col-md-12">
+              <mat-list [hidden]="!isReady">
+                <div *ngFor="let articleID of articlesID">
+                  <app-card-article (isReady)='changeIsLoading($event)' [articleID]="articleID"></app-card-article>
+                </div>
+              </mat-list>
+              <mat-list-item *ngIf="flagError"><mat-icon>warning</mat-icon> Error: Hubo un problema con la carga de artículos. Actualice el navegador y verifique la conexión a Internet.</mat-list-item>
+              <mat-paginator [hidden]="!isReady" [length]="allArticlesID.length" [pageSize]="offset" (page)="onPaginateChange($event.pageIndex)"></mat-paginator>
+            </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <br>
+  </div>
+</div>

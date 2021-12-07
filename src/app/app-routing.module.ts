@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundError } from 'rxjs';
 import { ArticlesComponent } from './articles/articles.component';
 import { Error404Component } from './error404/error404.component';
 
