@@ -1,16 +1,26 @@
-import { TestBed } from '@angular/core/testing';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Article } from '../models/Article';
 
-import { ApiService } from './api.service';
+@Injectable({
+  providedIn: 'root'
+})
+export class StoriesService {
 
-describe('ApiService', () => {
-  let service: ApiService;
+  stories: Array<number>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ApiService);
-  });
+  baseUrl = "https://hacker-news.firebaseio.com/v0/"
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+  constructor( private clientHttp: HttpClient) {
+    
+   }
+
+  getTopStories(){
+    return this.clientHttp.get<any>(`${this.baseUrl}topstories.json`);
+  }
+
+  getStory(id: number): Observable<Story>{
+    return this.clientHttp.get<any>(`${this.baseUrl}item/${id}.json`);
+  }
+}

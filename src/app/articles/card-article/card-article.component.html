@@ -1,1 +1,10 @@
-<p>card-article works!</p>
+<mat-list-item>
+    <mat-icon mat-list-icon>language</mat-icon>
+    <h4 mat-line><a href="{{article.url}}">{{article.title}}</a></h4>
+    <p mat-line><small>Created by: {{article.by}} - {{article.time | date}}</small></p>
+
+</mat-list-item>
+<ng-template #loading>
+    <div>Loading ...</div>
+</ng-template>  
+<mat-divider></mat-divider>

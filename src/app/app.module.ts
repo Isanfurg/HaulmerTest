@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArticlesComponent } from './articles/articles.component';
 import { MatButtonModule } from '@angular/material/button';
 import { Error404Component } from './error404/error404.component';
-import { TopComponent } from './top/top.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -16,12 +15,13 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatIconModule} from '@angular/material/icon';
 import { MatProgressSpinner, MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress-spinner';
 import { MatListModule } from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     ArticlesComponent,
     Error404Component,
-    TopComponent,
+
     CardArticleComponent
   ],
   imports: [
@@ -37,6 +37,7 @@ import { MatListModule } from '@angular/material/list';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

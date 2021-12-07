@@ -25,7 +25,7 @@ export class ArticlesComponent implements OnInit {
 
     this.allArticlesID = new Array<number>();
     this.articlesID = new Array<number>();
-    this.offset = 5;
+    this.offset = 10;
 
     this.isReady = false;
     this.isReady = false;
@@ -34,8 +34,8 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit() {
     this.service.getArticles().subscribe(
-      stories => {this.allArticlesID = stories;
-                  this.articlesID = stories.slice(0,this.offset);
+      Articles => {this.allArticlesID = Articles;
+                  this.articlesID = Articles.slice(0,this.offset);
       },
       error => {this.flagError = true;}
     );
